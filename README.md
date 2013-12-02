@@ -39,7 +39,7 @@ Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (l
 
 ####Clone the openvpn_server Blueprint
 
-  $	git clone https://github.com/chef-blueprints/openvpn_server_.git
+	$	git clone https://github.com/chef-blueprints/openvpn_server_.git
 
 ####Setup a Cheffile
 
@@ -48,29 +48,29 @@ By default `Cheffile` is a symlink to `share/librarian/Cheffile.full` which incl
 
 To setup a minimal server with only the openvpm cookbook:
 
-  $ ln -fsv ./share/librarian/Cheffile.minimal ./Cheffile
+	$ ln -fsv ./share/librarian/Cheffile.minimal ./Cheffile
 
 ####Install the cookbooks
 
 This will fetch the cookbooks as specified in the Cheffile:
 
-  $ librarian-chef install --clean
+	$ librarian-chef install --clean
   
 ####Setup node.json
 
 For the 'minimal' cookbook setup:
 
-  $ cp -v share/chef/node.minimal.json node.json
+	$ cp -v share/chef/node.minimal.json node.json
 
 For the 'full' cookbook setup:
 
-  $ cp -v share/chef/node.full.json node.json
+	$ cp -v share/chef/node.full.json node.json
   
 ####Setup a Vagrantfile
 
 Copy the default Vagrantfile from `share/vagrant`:
 
-  $ cp -v share/vagrant/Vagrantfile.default Vagrantfile
+	$ cp -v share/vagrant/Vagrantfile.default Vagrantfile
 
 ####Run with Vagrant
 
@@ -90,11 +90,11 @@ Add a new box and up it (default in `Vagrantfile` is Debian 7.10, Ubuntu 12.04 i
 
 Vagrant will automatically add a new box per the Vagrantfile if not already created (including download).
 
-  $ vagrant up
+	$ vagrant up
 
 Need debug?
 
-  $ VAGRANT_LOG=debug vagrant up
+	$ VAGRANT_LOG=debug vagrant up
 	
 This uses the `Vagrantfile` and `node.json` (for the Chef Solo provisioning) residing in the root of the repository, copied above.
 
@@ -133,15 +133,15 @@ Search the MultiCloud marketplace for the 'OpenVPN ServerTemplate' (http://right
 
 Set this environment variable to strip .git from each cookbook checkout:
 
-  $ export LIBRARIAN_CHEF_INSTALL__STRIP_DOT_GIT=1
+	$ export LIBRARIAN_CHEF_INSTALL__STRIP_DOT_GIT=1
 
 To update a cookbook (example, openvpn):
 	
-  $ librarian-chef update openvpn
+	$ librarian-chef update openvpn
 
 To refresh all the cookbooks in `cookbooks/` per the `Cheffile`, run the following:
 
-  $ librarian-chef install
+	$ librarian-chef install
 	
 #Errata
 
