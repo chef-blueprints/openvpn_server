@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+# version requirements, https://github.com/opscode-cookbooks/apt#requirements
+# older version is used explicitly for Chef 10 support
+cookbook 'apt',
+  :git => 'https://github.com/opscode-cookbooks/apt',
+  :ref => '1.7.0'
+    
+cookbook 'cron',
+  :git => 'https://github.com/opscode-cookbooks/cron',
+  :ref => 'v1.2.8'
+
+cookbook 'ntp',
+  :git => 'https://github.com/opscode-cookbooks/ntp',
+  :ref => 'v1.5.0'
+
+# use until https://github.com/opscode-cookbooks/openvpn/pull/15 is processed
+cookbook 'openvpn',
+  :git => 'https://github.com/flaccid/openvpn',
+  :ref => 'COOK-502'
+#cookbook 'openvpn',
+#  :git => 'https://github.com/opscode-cookbooks/openvpn',
+#  :ref => 'v2.0.0'
+
+cookbook 'postfix',
+  :git => 'https://github.com/opscode-cookbooks/postfix',
+  :ref => 'v3.0.0'
+
+cookbook 'resolver',
+  :git => 'https://github.com/opscode-cookbooks/resolver',
+  :ref => 'v1.1.4'
+  
+cookbook 'sudo',
+  :git => 'https://github.com/opscode-cookbooks/sudo',
+  :ref => 'v2.2.0'
+
+cookbook 'system',
+  :git => 'https://github.com/xhost-cookbooks/system',
+  :ref => 'v0.0.1'

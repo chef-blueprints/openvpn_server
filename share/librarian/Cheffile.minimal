@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+#cookbook 'openvpn',
+#  :git => 'https://github.com/opscode-cookbooks/openvpn',
+#  :ref => 'v2.0.0'
+
+# use until https://github.com/opscode-cookbooks/openvpn/pull/15 is processed
+cookbook 'openvpn',
+  :git => 'https://github.com/flaccid/openvpn',
+  :ref => 'COOK-502'

@@ -1,0 +1,68 @@
+GIT
+  remote: https://github.com/flaccid/openvpn
+  ref: COOK-502
+  sha: f3b47bc7188e13e663f67f35daafe0948f8e5f66
+  specs:
+    openvpn (2.0.1)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/apt
+  ref: 1.7.0
+  sha: ea834265247cc8b507ac37ab3a34a9b44ed27a11
+  specs:
+    apt (1.7.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/cron
+  ref: v1.2.8
+  sha: fd6e67d6ce1c53878f38c23a107c369c1d40e4de
+  specs:
+    cron (1.2.8)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/ntp
+  ref: v1.5.0
+  sha: 96ca5b53f600d5f5a473b6ed6581a1115af55818
+  specs:
+    ntp (1.5.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/postfix
+  ref: v3.0.0
+  sha: 1c7c93d6f1d6a8085fb8ebc8205b6230aaaaed10
+  specs:
+    postfix (3.0.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/resolver
+  ref: v1.1.4
+  sha: 4a613a412b83f30d25a4a4a03df96daf00ed1894
+  specs:
+    resolver (1.1.4)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/sudo
+  ref: v2.2.0
+  sha: ac46f9ee4d16c36f4e7e05522d168eb44af3b304
+  specs:
+    sudo (2.2.0)
+
+GIT
+  remote: https://github.com/xhost-cookbooks/system
+  ref: v0.0.1
+  sha: 69382aa89b63b9e5ecf711ae8755412cf5d41778
+  specs:
+    system (0.0.1)
+      apt (>= 0.0.0)
+      cron (>= 0.0.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  cron (>= 0)
+  ntp (>= 0)
+  openvpn (>= 0)
+  postfix (>= 0)
+  resolver (>= 0)
+  sudo (>= 0)
+  system (>= 0)
+

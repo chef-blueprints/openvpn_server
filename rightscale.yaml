@@ -1,0 +1,145 @@
+---
+server_template:
+  name: OpenVPN Server
+  description: "![OpenVPN](http://www.rosendaal.net/blog/wp-content/uploads/2013/01/openvpn_icon_by_archeinre-d5r1nls.png\n!
+  \"OpenVPN\")\n\nOpenVPN Server\n==============\n\nA base OpenVPN Server on Linux.\n\n
+  * Uses the [Opscode openvpn\n * cookbook](https://github.com/opscode-cookbooks/openvpn)\n
+  * Generate client certificates with\n * [https://github.com/opscode-cookbooks/openvpn#ssl-certificates](https://github.com/opscode-cookbooks/openvpn#ssl-certificates)\n
+  * OpenVPN official documentation,\n * [http://openvpn.net/index.php/open-source/documentation/](http://openvpn.net/index.php/open-source/documentation/)\n
+  * Use the Android app, [OpenVPN\n * Connect](https://play.google.com/store/apps/details?id=net.openvpn.openvpn)\n
+  * for mobile\n * [Tunnelbrick](https://code.google.com/p/tunnelblick/) is a good
+  clicent\n * for OS X\n\nOperational Scripts\n-------------------\n\n * Run the 'OpenVPN:
+  setup redirect gateway' RightScript to route all client\n * traffic (including web-traffic)
+  through the VPN\n\nDevelopment Resources\n---------------------\n\nSee the [openvpn_server
+  Chef\nBlueprint](https://github.com/chef-blueprints/openvpn_server).\n\n- - -\n\nThis
+  is a RightScale OSS ServerTemplate supported by the community only and\nis an alpha
+  release not recommended for production systems.\n\n###For community support, feedback,
+  bugs & enhancement requests:\n\n* [RightScale OSS\n* Forums](https://forums.rightscale.com/forumdisplay.php?f=39)\n*
+  [#rightscale](irc://irc.freenode.net/#rightscale) channel on Freenode IRC\n* (irc.freenode.net)\n\nFor
+  additional information, please see the [RightScale OSS\nCommunity](http://support.rightscale.com/21-Community/RightScale_OSS)
+  page\non the Support Portal."
+  tags:
+  - publisher:name=RightScale Open Source
+  cookbooks: file:Cheffile
+  inputs: file:share/chef/node.rightscale.json
+  boot_scripts: file:share/chef/node.rightscale.json
+  operational_scripts: []
+  decommission_scripts: []
+  frozen_repositories: []
+  multi_cloud_images:
+  - id: '322234001'
+    publication_id: '50759'
+  - id: '322233001'
+    publication_id: '50757'
+  - id: '322232001'
+    publication_id: '50758'
+    default: true
+  - id: '231153001'
+    publication_id: '35618'
+  - id: '231152001'
+    publication_id: '35617'
+  alerts:
+  - name: cpu busy
+    description: ''
+    file: cpu-0/cpu-idle
+    value: value
+    condition: "<"
+    threshold: '15'
+    duration: '3'
+    escalation_name: warning
+  - name: cpu I/O wait
+    description: ''
+    file: cpu-0/cpu-wait
+    value: value
+    condition: ">"
+    threshold: '40'
+    duration: '15'
+    escalation_name: warning
+  - name: cpu overloaded
+    description: ''
+    file: cpu-0/cpu-idle.value
+    value: value
+    condition: ">"
+    threshold: '3'
+    duration: '5'
+    escalation_name: critical
+  - name: high network rx activity
+    description: ''
+    file: interface/if_octets-eth0
+    value: rx
+    condition: ">"
+    threshold: '50000000'
+    duration: '30'
+    escalation_name: critical
+  - name: high network tx activity
+    description: ''
+    file: interface/if_octets-eth0
+    value: tx
+    condition: ">"
+    threshold: '50000000'
+    duration: '10'
+    escalation_name: critical
+  - name: instance not responding
+    description: ''
+    file: cpu-0/cpu-idle
+    value: value
+    condition: "=="
+    threshold: NaN
+    duration: '5'
+    escalation_name: critical
+  - name: instance stranded
+    description: ''
+    file: RS/server-failure
+    value: state
+    condition: "=="
+    threshold: stranded
+    duration: '1'
+    escalation_name: critical
+  - name: instance terminated
+    description: ''
+    file: RS/server
+    value: state
+    condition: "=="
+    threshold: terminated
+    duration: '1'
+    escalation_name: critical
+  - name: low space in mnt partition
+    description: ''
+    file: df/df-mnt
+    value: free
+    condition: "<"
+    threshold: '10000000000'
+    duration: '5'
+    escalation_name: critical
+  - name: low space in root partition
+    description: ''
+    file: df/df-root
+    value: free
+    condition: "<"
+    threshold: '1000000000'
+    duration: '5'
+    escalation_name: critical
+  - name: low swap space
+    description: ''
+    file: swap/swap-free
+    value: value
+    condition: "<"
+    threshold: '100000000'
+    duration: '5'
+    escalation_name: critical
+  - name: memory low
+    description: ''
+    file: memory/memory-free
+    value: value
+    condition: "<"
+    threshold: '100'
+    duration: '1'
+    escalation_name: critical
+  - name: out of memory
+    description: ''
+    file: memory/memory-free
+    value: value
+    condition: "=="
+    threshold: '0'
+    duration: '1'
+    escalation_name: critical
