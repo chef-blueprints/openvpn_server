@@ -39,14 +39,14 @@ Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (l
 
 ####Clone the openvpn_server Blueprint
 
-	$	git clone https://github.com/chef-blueprints/openvpn_server_.git
+	$	git clone https://github.com/chef-blueprints/openvpn_server
 
 ####Setup a Cheffile
 
 By default `Cheffile` is a symlink to `share/librarian/Cheffile.full` which includes other cookbooks used with the server.
 `Cheffile.lock` will display the details of their upstream sources.
 
-To setup a minimal server with only the openvpm cookbook:
+To setup a minimal server with only the openvpn cookbook:
 
 	$ ln -fsv ./share/librarian/Cheffile.minimal ./Cheffile
 
@@ -121,7 +121,7 @@ For more information on using Chef Solo, see http://wiki.opscode.com/display/che
 
 ##RightScale
 
-Search the MultiCloud marketplace for the 'OpenVPN ServerTemplate' (http://rightscale.com/library).
+Search the MultiCloud marketplace for the 'OpenVPN Server' ServerTemplate (http://rightscale.com/library).
 
 #Using Librarian
 
