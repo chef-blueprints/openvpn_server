@@ -70,7 +70,7 @@ For the 'full' cookbook setup:
 
 Copy the default Vagrantfile from `share/vagrant`:
 
-	$ cp -v share/vagrant/Vagrantfile.default Vagrantfile
+  $ cp -v share/vagrant/Vagrantfile.default Vagrantfile
 
 ####Run with Vagrant
 
@@ -90,11 +90,11 @@ Add a new box and up it (default in `Vagrantfile` is Debian 7.10, Ubuntu 12.04 i
 
 Vagrant will automatically add a new box per the Vagrantfile if not already created (including download).
 
-	$ vagrant up
+  $ vagrant up
 
 Need debug?
 
-	$ VAGRANT_LOG=debug vagrant up
+  $ VAGRANT_LOG=debug vagrant up
 	
 This uses the `Vagrantfile` and `node.json` (for the Chef Solo provisioning) residing in the root of the repository, copied above.
 
@@ -111,11 +111,11 @@ By default this uses the `node.json`. You can easily switch the JSON attributes 
 	
 Its also possible to run with the cookbooks source as remote. This is handy because no Git checkout is needed:
 
-	sudo chef-solo -r https://github.com/chef-blueprints/openvpn_server/tarball/master
+	# chef-solo -r https://github.com/chef-blueprints/openvpn_server/tarball/master
 	
 And with a specific tag such as `Rev1`:
 
-	sudo chef-solo -r https://github.com/chef-blueprints/openvpn_server/tarball/rev1
+	# chef-solo -r https://github.com/chef-blueprints/openvpn_server/tarball/rev1
 
 For more information on using Chef Solo, see http://wiki.opscode.com/display/chef/Chef+Solo
 
@@ -127,28 +127,25 @@ Search the MultiCloud marketplace for the 'OpenVPN ServerTemplate' (http://right
 
 ##Install Librarian
 
-	sudo gem install librarian --no-rdoc --no-ri
+	# gem install librarian --no-rdoc --no-ri
 
 ##Updating cookbooks
 
 Set this environment variable to strip .git from each cookbook checkout:
 
-	export LIBRARIAN_CHEF_INSTALL__STRIP_DOT_GIT=1
+  $ export LIBRARIAN_CHEF_INSTALL__STRIP_DOT_GIT=1
 
 To update a cookbook (example, openvpn):
 	
-	librarian-chef update openvpn
+  $ librarian-chef update openvpn
 
 To refresh all the cookbooks in `cookbooks/` per the `Cheffile`, run the following:
 
-	librarian-chef install
+  $ librarian-chef install
 	
 #Errata
 
 TODO: MANIFEST file.
-
-License and Author
-==================
 
 ##License and Author
 
